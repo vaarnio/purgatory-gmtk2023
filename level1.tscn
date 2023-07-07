@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dyrudutb0ymcp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 385.0
+offset_top = 218.0
+offset_right = 708.0
+offset_bottom = 367.0
+text = "Gaming"
