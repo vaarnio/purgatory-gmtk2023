@@ -9,3 +9,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_body_entered(body):
+	if body.is_in_group("Player"):
+		get_parent().get_node(self.get_path()).queue_free()
