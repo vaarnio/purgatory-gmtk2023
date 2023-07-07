@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneController="*res://scene_controller.gd"
+PlayerVariables="*res://player_variables.gd"
 
 [rendering]
 
