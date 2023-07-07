@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyrudutb0ymcp"]
+[gd_scene load_steps=9 format=3 uid="uid://dyrudutb0ymcp"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_fbnp4"]
 [ext_resource type="Texture2D" uid="uid://j26xtxjwf5tb" path="res://assets/image.png" id="2_r8808"]
-[ext_resource type="Script" path="res://Bullet.gd" id="3_fxraf"]
-[ext_resource type="Texture2D" uid="uid://dig6m74oxr3vx" path="res://assets/bullet.png" id="4_3a0r7"]
+[ext_resource type="Script" path="res://Healthbar.gd" id="3_xps3u"]
+[ext_resource type="Texture2D" uid="uid://bco2fr2brjr6h" path="res://assets/barHorizontal_green.png" id="4_xamdv"]
+[ext_resource type="Script" path="res://Bullet.gd" id="5_k4sn5"]
+[ext_resource type="Texture2D" uid="uid://dig6m74oxr3vx" path="res://assets/bullet.png" id="6_ombhk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g02tk"]
-size = Vector2(106, 158)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
+size = Vector2(108, 158)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydo0r"]
-size = Vector2(43, 83)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dutia"]
+size = Vector2(44, 84)
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,18 +29,30 @@ script = ExtResource("1_fbnp4")
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("2_r8808")
 
+[node name="Timer" type="Timer" parent="Player"]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_g02tk")
+shape = SubResource("RectangleShape2D_pafeb")
 
-[node name="Bullet" type="Area2D" parent="."]
-position = Vector2(100, 200)
-script = ExtResource("3_fxraf")
+[node name="HealthDisplay" type="Node2D" parent="."]
+position = Vector2(12, 11)
+script = ExtResource("3_xps3u")
 
-[node name="Sprite" type="Sprite2D" parent="Bullet"]
-texture = ExtResource("4_3a0r7")
+[node name="HealthBar" type="TextureProgressBar" parent="HealthDisplay"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("4_xamdv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_ydo0r")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(200, 300)
+script = ExtResource("5_k4sn5")
 
-[connection signal="body_entered" from="Bullet" to="Bullet" method="_on_body_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("6_ombhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_dutia")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
