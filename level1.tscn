@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dyrudutb0ymcp"]
+[gd_scene load_steps=3 format=3 uid="uid://dyrudutb0ymcp"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_fbnp4"]
+[ext_resource type="Texture2D" uid="uid://j26xtxjwf5tb" path="res://assets/image.png" id="2_r8808"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,3 +11,10 @@ offset_top = 218.0
 offset_right = 708.0
 offset_bottom = 367.0
 text = "Gaming"
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(596, 371)
+script = ExtResource("1_fbnp4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_r8808")
