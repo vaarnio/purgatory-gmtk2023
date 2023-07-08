@@ -15,6 +15,10 @@ func _process(delta):
 func goto_gameover_scene():
 	print("goto gameover")
 	goto_scene("res://scenes/gameover.tscn")
+	
+func goto_menu_scene():
+	print("goto menu")
+	goto_scene("res://scenes/menu.tscn")
 
 func goto_scene(path):
 	# The solution is to defer the load to a later time, when
