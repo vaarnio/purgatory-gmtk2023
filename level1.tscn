@@ -47,6 +47,8 @@ texture_progress = ExtResource("4_xamdv")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(200, 300)
 script = ExtResource("5_k4sn5")
+move_speed = 300.0
+move_dir = Vector2(0, 1000)
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("6_ombhk")
