@@ -17,11 +17,7 @@ func take_damage(value):
 	if self.health - value <= 0:
 		print("gameover")
 		set_health(0)
-<<<<<<< HEAD
-		GmeController.gameover()a
-=======
 		GameController.gameover()
->>>>>>> 9a107d3 (bullets heal the player)
 	else:
 		set_health(self.health - value)
 
