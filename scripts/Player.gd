@@ -56,3 +56,4 @@ func on_Timer_timeout():
 	#PlayerVariables.take_damage(5)
 	healthbar.value = PlayerVariables.health
 	shoot()
+
