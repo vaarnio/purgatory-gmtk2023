@@ -7,7 +7,7 @@ extends Area2D
 
 
 @export var type = "NormalBullet"
-
+var texture2 = preload("res://assets/bulletdamage.png")
 # Called when the node enters the scene tree for the first time.
 func setup(a, b, c):
 	move_speed = a
@@ -17,6 +17,7 @@ func setup(a, b, c):
 	
 func changeType(a):
 	type = a
+	$Sprite2D.texture = texture2
 
 func _ready():
 	global_position = start_pos
