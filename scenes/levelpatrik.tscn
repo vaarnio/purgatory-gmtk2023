@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://diwkn0jkaspsq"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_xn5i2"]
+[ext_resource type="Texture2D" uid="uid://j26xtxjwf5tb" path="res://assets/image.png" id="2_81lsj"]
+[ext_resource type="Script" path="res://scripts/Healthbar.gd" id="3_hl4ia"]
+[ext_resource type="Texture2D" uid="uid://bco2fr2brjr6h" path="res://assets/barHorizontal_green.png" id="4_hiv25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
+size = Vector2(108, 158)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 385.0
+offset_top = 218.0
+offset_right = 708.0
+offset_bottom = 367.0
+text = "Gaming"
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(596, 371)
+script = ExtResource("1_xn5i2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_81lsj")
+
+[node name="Timer" type="Timer" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_pafeb")
+
+[node name="HealthDisplay" type="Node2D" parent="."]
+position = Vector2(12, 11)
+script = ExtResource("3_hl4ia")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthDisplay"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("4_hiv25")
