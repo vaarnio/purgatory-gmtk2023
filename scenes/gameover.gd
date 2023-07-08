@@ -8,7 +8,7 @@ func _ready():
 	pass # Replace with function body.
 
 func return_to_menu():
-	SceneController.goto_menu_scene()
+	GameController.menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

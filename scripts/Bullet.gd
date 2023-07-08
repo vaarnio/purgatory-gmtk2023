@@ -46,3 +46,5 @@ func _on_body_entered(body):
 		body._despawn()
 	if body.is_in_group("frenemy") and self.type == "AttackBullet":
 		body.hit()
+	if body.is_in_group("blocking_enemy") and self.type == "AttackBullet":
+		body.hit()
