@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxsdkrs5htjbg"]
+
+[ext_resource type="Texture2D" uid="uid://c4lvgamxlwym3" path="res://assets/flame.png" id="1_0aj8f"]
+[ext_resource type="Script" path="res://scripts/fire_particle.gd" id="1_yhb10"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c1q86"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_ek8vk"]
+offsets = PackedFloat32Array(0.139073, 0.748344, 0.940397)
+colors = PackedColorArray(0.898039, 0.764706, 0, 0.607843, 1, 0, 0, 0.941176, 1, 1, 1, 0)
+
+[node name="fire_particle" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_c1q86")
+amount = 14
+speed_scale = 3.59
+explosiveness = 0.1
+randomness = 0.4
+lifetime_randomness = 0.3
+texture = ExtResource("1_0aj8f")
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+angle_min = 720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 0.7
+color_ramp = SubResource("Gradient_ek8vk")
+script = ExtResource("1_yhb10")
