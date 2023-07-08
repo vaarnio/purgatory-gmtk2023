@@ -24,6 +24,6 @@ func _physics_process(delta):
 		move_and_slide()
 
 func on_Timer_timeout():
-	PlayerVariables.take_damage(10)
+	PlayerVariables.take_damage(5)
 	healthbar.value = PlayerVariables.health
 	print(PlayerVariables.health)
