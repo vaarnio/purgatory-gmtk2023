@@ -1,13 +1,14 @@
-extends Button
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.pressed.connect(self._pressed)
+	$Score.text = str(GameController.score)
+	$Button.connect("button_down", return_to_menu)
 	pass # Replace with function body.
 
-func _pressed():
-	SceneController.goto_scene("res://scenes/Level1_Patrik.tscn")
+func return_to_menu():
+	GameController.menu()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

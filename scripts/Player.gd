@@ -6,8 +6,6 @@ var target = position
 
 @onready
 var timer = $Timer
-@onready
-var healthbar = get_parent().get_node("HealthDisplay/HealthBar")
 const obj_bullet = preload("res://scenes/bullet.tscn")
 var rng = RandomNumberGenerator.new()
 var attacked = false
@@ -34,6 +32,7 @@ func shootFromPlayer():
 		v2 += Vector2(0, -80)
 		var new_bullet = obj_bullet.instantiate()
 		new_bullet.setup(300, v1, v2, "AttackBullet")
+		new_bullet.rotation_degrees = 180
 		get_parent().add_child.call_deferred(new_bullet)
 	else:
 		#await get_tree().create_timer(0.5).timeout
@@ -48,5 +47,4 @@ func _physics_process(delta):
 
 func on_Timer_timeout():
 	PlayerVariables.take_damage(5)
-	healthbar.value = PlayerVariables.health
 

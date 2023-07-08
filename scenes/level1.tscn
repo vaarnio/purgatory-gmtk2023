@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyrudutb0ymcp"]
+[gd_scene load_steps=8 format=3 uid="uid://dyrudutb0ymcp"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_uq5rh"]
 [ext_resource type="Texture2D" uid="uid://j26xtxjwf5tb" path="res://assets/image.png" id="2_j4tpc"]
-[ext_resource type="Script" path="res://scripts/Healthbar.gd" id="3_xfdat"]
-[ext_resource type="Texture2D" uid="uid://bco2fr2brjr6h" path="res://assets/barHorizontal_green.png" id="4_aibeq"]
 [ext_resource type="Script" path="res://scripts/Bullet.gd" id="5_pcx45"]
+[ext_resource type="PackedScene" uid="uid://ch71loucpaifd" path="res://prefabs/hud.tscn" id="5_x67fh"]
 [ext_resource type="Texture2D" uid="uid://dig6m74oxr3vx" path="res://assets/bullet.png" id="6_khcqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
@@ -34,16 +33,6 @@ texture = ExtResource("2_j4tpc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_pafeb")
 
-[node name="HealthDisplay" type="Node2D" parent="."]
-position = Vector2(12, 11)
-script = ExtResource("3_xfdat")
-
-[node name="HealthBar" type="TextureProgressBar" parent="HealthDisplay"]
-offset_right = 40.0
-offset_bottom = 40.0
-value = 100.0
-texture_progress = ExtResource("4_aibeq")
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(200, 300)
 script = ExtResource("5_pcx45")
@@ -54,5 +43,8 @@ texture = ExtResource("6_khcqe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_dutia")
+
+[node name="hud" parent="." instance=ExtResource("5_x67fh")]
+position = Vector2(273, 371)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
