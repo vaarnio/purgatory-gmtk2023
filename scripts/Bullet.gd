@@ -12,6 +12,8 @@ var barrelArr = []
 var barrelsLocated = 0
 var min_distance = 10000
 
+var texture_heal = preload("res://assets/bulletheal.png")
+var texture_attack = preload("res://assets/bulletdamage.png")
 # Called when the node enters the scene tree for the first time.
 func setup(speed, direction, pos, set_type):
 	self.move_speed = speed
@@ -58,3 +60,4 @@ func _on_body_entered(body):
 			#print(_i.global_position)
 		
 		currentBestBarrel._despawn()
+		

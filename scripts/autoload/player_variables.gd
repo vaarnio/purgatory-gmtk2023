@@ -17,7 +17,7 @@ func take_damage(value):
 	if self.health - value <= 0:
 		print("gameover")
 		set_health(0)
-		GameController.gameover()
+		GmeController.gameover()a
 	else:
 		set_health(self.health - value)
 
