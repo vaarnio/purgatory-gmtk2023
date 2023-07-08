@@ -12,11 +12,14 @@ func _ready():
 func _process(delta):
 	pass
 
+func goto_gameover_scene():
+	print("goto gameover")
+	goto_scene("res://scenes/gameover.tscn")
+
 func goto_scene(path):
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
 	call_deferred("_deferred_goto_scene", path)
-
 
 func _deferred_goto_scene(path):
 	# It is now safe to remove the current scene
