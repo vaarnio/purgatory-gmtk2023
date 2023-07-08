@@ -22,7 +22,7 @@ func _input(event):
 	target = get_global_mouse_position()
 	
 func _process(delta):
-	if Input.is_action_just_released("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"):
 		shootFromPlayer()
 
 func shoot():
@@ -33,7 +33,7 @@ func shoot():
 	
 func shootFromPlayer():
 	if not attacked:
-		attacked = true
+		#attacked = true
 		var v1 = Vector2(0, -500)
 		var v2 = position
 		# original position for ammo
@@ -43,7 +43,7 @@ func shootFromPlayer():
 		new_bullet.changeType("AttackBullet")
 		get_parent().add_child.call_deferred(new_bullet)
 	else:
-		await get_tree().create_timer(0.5).timeout
+		#await get_tree().create_timer(0.5).timeout
 		attacked = false
 
 func _physics_process(delta):
