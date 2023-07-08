@@ -5,11 +5,14 @@ var directionIsRight : bool = false
 @export var target_right = Vector2(600, 200)
 
 @onready var timer = $Timer
+var rng = RandomNumberGenerator.new()
 
 @export var speed: int = 100
 @export var target: Vector2 = self.target_left
 
 func _ready():
+	rng.randomize()
+	timer.wait_time = rng.randi_range(1,3)
 	print("Here I am")
 
 func _physics_process(delta):
