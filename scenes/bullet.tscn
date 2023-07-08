@@ -2,14 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/Bullet.gd" id="1_exoot"]
 [ext_resource type="Texture2D" uid="uid://dtp4sfcbfmvb0" path="res://assets/bulletheal.png" id="2_snual"]
-[ext_resource type="Texture2D" uid="uid://c4lvgamxlwym3" path="res://assets/flame.png" id="3_ldrrq"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5hnuk"]
-blend_mode = 1
-
-[sub_resource type="Gradient" id="Gradient_qi7w4"]
-offsets = PackedFloat32Array(0, 0.0728477, 0.741722, 1)
-colors = PackedColorArray(1, 0.47451, 0, 0.521569, 1, 0.501961, 0, 0.407843, 1, 0.164706, 0.145098, 0.705882, 1, 0.0313726, 0.137255, 0.258824)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ctweg"]
 radius = 15.0

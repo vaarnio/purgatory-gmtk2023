@@ -23,6 +23,9 @@ func _physics_process(delta):
 	if position.distance_to(target) > 5:
 		move_and_slide()
 
+func hit():
+	self.get_parent().remove_child(self)
+
 func shoot():
 	var v1 = PlayerVariables.position
 	var v2 = position

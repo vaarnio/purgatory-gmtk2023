@@ -21,6 +21,9 @@ func _physics_process(delta):
 	if position.distance_to(target) > 5:
 		move_and_slide()
 
+func hit():
+	self.get_parent().remove_child(self)
+
 func roam():
 	print("mingling")
 	timer.connect("timeout", change_direction)
