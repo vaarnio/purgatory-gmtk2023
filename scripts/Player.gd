@@ -7,7 +7,7 @@ var target = position
 @onready
 var timer = $Timer
 @onready
-var healthbar = get_parent().get_node("HealthDisplay/HealthBar")
+var healthbar = get_parent().get_node("hud/HealthDisplay/HealthBar")
 const obj_bullet = preload("res://scenes/bullet.tscn")
 var rng = RandomNumberGenerator.new()
 var attacked = false

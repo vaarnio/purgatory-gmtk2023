@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch71loucpaifd"]
+
+[ext_resource type="Script" path="res://scripts/Healthbar.gd" id="1_jv323"]
+[ext_resource type="Texture2D" uid="uid://bco2fr2brjr6h" path="res://assets/barHorizontal_green.png" id="2_kms4q"]
+[ext_resource type="Script" path="res://scenes/ScoreDisplay.gd" id="3_w2uf8"]
+
+[node name="hud" type="Node2D"]
+
+[node name="HealthDisplay" type="Node2D" parent="."]
+position = Vector2(489, 8)
+script = ExtResource("1_jv323")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthDisplay"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("2_kms4q")
+
+[node name="ScoreDisplay" type="Node2D" parent="."]
+script = ExtResource("3_w2uf8")
+
+[node name="ScoreText" type="RichTextLabel" parent="ScoreDisplay"]
+offset_left = 65.0
+offset_top = 10.0
+offset_right = 484.0
+offset_bottom = 33.0
+
+[node name="Text" type="RichTextLabel" parent="ScoreDisplay"]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 63.0
+offset_bottom = 31.0
+text = "score:"
+
+[node name="Gaming" type="RichTextLabel" parent="."]
+offset_left = 385.0
+offset_top = 218.0
+offset_right = 708.0
+offset_bottom = 367.0
+text = "Gaming"
