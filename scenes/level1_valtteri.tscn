@@ -7,13 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bco2fr2brjr6h" path="res://assets/barHorizontal_green.png" id="4_cu0u2"]
 [ext_resource type="Script" path="res://scripts/Bullet.gd" id="5_12rb4"]
 [ext_resource type="Texture2D" uid="uid://dig6m74oxr3vx" path="res://assets/bullet.png" id="6_ln5bh"]
-[ext_resource type="PackedScene" uid="uid://c5m44qhpa8n54" path="res://prefabs/frenemy.tscn" id="7_4wfeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
 size = Vector2(108, 158)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dutia"]
 size = Vector2(44, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfwhr"]
+size = Vector2(1152, 200)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_bxjtq")
@@ -58,12 +60,10 @@ texture = ExtResource("6_ln5bh")
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_dutia")
 
-[node name="Frenemy" parent="." instance=ExtResource("7_4wfeo")]
-position = Vector2(540, 122)
-speed = 50
-target = Vector2(500, 500)
+[node name="spawn_area" type="Area2D" parent="."]
 
-[node name="Frenemy2" parent="." instance=ExtResource("7_4wfeo")]
-position = Vector2(1131, 630)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_area"]
+position = Vector2(576, 101)
+shape = SubResource("RectangleShape2D_mfwhr")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
