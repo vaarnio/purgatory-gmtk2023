@@ -6,18 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vf0um"]
 size = Vector2(44, 84)
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_exoot")
 move_speed = 600.0
 move_dir = Vector2(50, 500)
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_n4vlh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_vf0um")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

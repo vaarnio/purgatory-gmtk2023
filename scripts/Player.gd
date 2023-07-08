@@ -20,13 +20,26 @@ func _ready():
 func _input(event):
 	target = get_global_mouse_position()
 	
-	
+func _process(delta):
+	if Input.is_action_pressed("ui_accept"):
+		shootFromPlayer()
+
 func shoot():
+	var v1 = Vector2(500, 200)
 	var new_bullet = obj_bullet.instantiate()
-	#var rNum = rng.rand_range(0,1000)
-	#var rNum2 = rng.rand_range(0,1000)
-	#new_bullet.position = Vector2(rNum, rNum2)
-	#new_bullet.velocity = Vector2(speed, 0).r
+	new_bullet.setup(100, position, v1)
+	get_parent().add_child(new_bullet)
+	
+func shootFromPlayer():
+	#var rNum = rng.randi_range(-1000,1000)
+	#var rNum2 = rng.randi_range(-1000,1000)
+	var v1 = Vector2(0, -500)
+	var v2 = position
+	# original position for ammo
+	v2 += Vector2(0, -80)
+	var new_bullet = obj_bullet.instantiate()
+	new_bullet.setup(-5, v1, v2)
+	new_bullet.changeType("AttackBullet")
 	get_parent().add_child(new_bullet)
 
 func _physics_process(delta):
@@ -36,6 +49,6 @@ func _physics_process(delta):
 		move_and_slide()
 
 func on_Timer_timeout():
-	PlayerVariables.take_damage(5)
+	#PlayerVariables.take_damage(5)
 	healthbar.value = PlayerVariables.health
 	shoot()
