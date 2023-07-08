@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5m44qhpa8n54"]
+
+[ext_resource type="Script" path="res://scripts/Frenemy.gd" id="1_ibxak"]
+[ext_resource type="Texture2D" uid="uid://dtb8p3j42wqtc" path="res://assets/icon.svg" id="2_ieark"]
+
+[node name="Frenemy" type="CharacterBody2D"]
+position = Vector2(609, 129)
+script = ExtResource("1_ibxak")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.490234, 0.443359)
+texture = ExtResource("2_ieark")
