@@ -28,7 +28,7 @@ func _process(delta):
 func shoot():
 	var v1 = Vector2(500, 200)
 	var new_bullet = obj_bullet.instantiate()
-	new_bullet.setup(100, position, v1)
+	new_bullet.setup(300, position, v1, "NormalBullet")
 	get_parent().add_child(new_bullet)
 	
 func shootFromPlayer():
@@ -39,8 +39,7 @@ func shootFromPlayer():
 		# original position for ammo
 		v2 += Vector2(0, -80)
 		var new_bullet = obj_bullet.instantiate()
-		new_bullet.setup(-5, v1, v2)
-		new_bullet.changeType("AttackBullet")
+		new_bullet.setup(300, v1, v2, "AttackBullet")
 		get_parent().add_child.call_deferred(new_bullet)
 	else:
 		await get_tree().create_timer(0.5).timeout
@@ -51,6 +50,7 @@ func _physics_process(delta):
 	# look_at(target)
 	if position.distance_to(target) > 5:
 		move_and_slide()
+	PlayerVariables.position = position
 
 func on_Timer_timeout():
 	#PlayerVariables.take_damage(5)
