@@ -40,6 +40,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("Player")and self.type == "NormalBullet":
 		get_parent().get_node(self.get_path()).queue_free()
+		PlayerVariables.heal_damage(5)
 		print("Bullet hit player")
 	if body.is_in_group("barrel"):
 		barrelArr = []

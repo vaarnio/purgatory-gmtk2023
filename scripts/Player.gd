@@ -13,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 var attacked = false
 
 func _ready():
+	PlayerVariables.position = position
 	timer.connect("timeout", on_Timer_timeout)
 	timer.set_one_shot(false)
 	timer.start()
@@ -46,6 +47,6 @@ func _physics_process(delta):
 	PlayerVariables.position = position
 
 func on_Timer_timeout():
-	#PlayerVariables.take_damage(5)
+	PlayerVariables.take_damage(5)
 	healthbar.value = PlayerVariables.health
 
