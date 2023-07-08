@@ -6,8 +6,6 @@ var target = position
 
 @onready
 var timer = $Timer
-@onready
-var healthbar = get_parent().get_node("hud/HealthDisplay/HealthBar")
 const obj_bullet = preload("res://scenes/bullet.tscn")
 var rng = RandomNumberGenerator.new()
 var attacked = false
@@ -49,5 +47,4 @@ func _physics_process(delta):
 
 func on_Timer_timeout():
 	PlayerVariables.take_damage(5)
-	healthbar.value = PlayerVariables.health
 

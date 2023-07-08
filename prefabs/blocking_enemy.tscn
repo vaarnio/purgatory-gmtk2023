@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdg5adrtqf4i"]
+[gd_scene load_steps=4 format=3 uid="uid://d0yhdhkghyqba"]
 
 [ext_resource type="Texture2D" uid="uid://d0m5eepd4ha2u" path="res://assets/blocking_enemy_1.png" id="1_4avsp"]
 [ext_resource type="Script" path="res://scripts/blocking_enemy.gd" id="1_e1exp"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhs4u"]
 size = Vector2(65, 20)
 
-[node name="blocking_enemy" type="CharacterBody2D"]
+[node name="blocking_enemy" type="CharacterBody2D" groups=["blocking_enemy"]]
 script = ExtResource("1_e1exp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -20,3 +20,9 @@ func add_score(value):
 
 func gameover():
 	SceneController.goto_gameover_scene()
+
+func menu():
+	SceneController.goto_menu_scene()
+	PlayerVariables.health = 100
+	PlayerVariables.max_health = 100
+	self.set_score(0)
