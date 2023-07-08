@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="Purgatory"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
-SceneController="*res://scene_controller.gd"
-PlayerVariables="*res://player_variables.gd"
+SceneController="*res://scripts/autoload/scene_controller.gd"
+PlayerVariables="*res://scripts/autoload/player_variables.gd"
+GameController="*res://scripts/autoload/game_controller.gd"
 
 [rendering]
 
