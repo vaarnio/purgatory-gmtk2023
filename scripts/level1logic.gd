@@ -1,8 +1,15 @@
 extends Node2D
 
-const blenemySc = preload("res://scenes/development/blocking_enemy.tscn")
-const frenemySc = preload("res://prefabs/frenemy.tscn")
+const blenemySc = preload("res://prefabs/blocking_enemy.tscn")
 const barrelSc = preload("res://prefabs/barrel.tscn")
+const frenemySc = preload("res://prefabs/frenemy.tscn")
+
+var rng = RandomNumberGenerator.new()
+@onready var spawn_extents = $spawn_area/CollisionShape2D.shape.extents
+
+# how many enemies of each type to spawn per wave
+var wave_frenemies = 5
+var wave_blenemies = 1
 
 var rng = RandomNumberGenerator.new()
 @onready var spawn_extents = $spawn_area/CollisionShape2D.shape.extents
