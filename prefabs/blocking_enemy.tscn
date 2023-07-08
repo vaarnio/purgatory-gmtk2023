@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxeh3a1tberh3"]
+[gd_scene load_steps=4 format=3 uid="uid://iw8n1hq6yy33"]
 
 [ext_resource type="Texture2D" uid="uid://d0m5eepd4ha2u" path="res://assets/blocking_enemy_1.png" id="1_4avsp"]
 [ext_resource type="Script" path="res://scripts/blocking_enemy.gd" id="1_e1exp"]
