@@ -16,7 +16,6 @@ func _ready():
 	timer.connect("timeout", on_Timer_timeout)
 	timer.set_one_shot(false)
 	timer.start()
-	shoot()
 
 func _input(event):
 	target = get_global_mouse_position()
@@ -24,17 +23,11 @@ func _input(event):
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		shootFromPlayer()
-
-func shoot():
-	var v1 = Vector2(500, 200)
-	var new_bullet = obj_bullet.instantiate()
-	new_bullet.setup(300, position, v1, "NormalBullet")
-	get_parent().add_child(new_bullet)
 	
 func shootFromPlayer():
 	if not attacked:
 		#attacked = true
-		var v1 = Vector2(0, -500)
+		var v1 = Vector2(position.x,0)
 		var v2 = position
 		# original position for ammo
 		v2 += Vector2(0, -80)
@@ -55,5 +48,4 @@ func _physics_process(delta):
 func on_Timer_timeout():
 	#PlayerVariables.take_damage(5)
 	healthbar.value = PlayerVariables.health
-	shoot()
 
