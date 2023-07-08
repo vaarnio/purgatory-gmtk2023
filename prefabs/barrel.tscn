@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://xxs53i2bvksr"]
+[gd_scene load_steps=4 format=3 uid="uid://dhqoiauff1jby"]
 
 [ext_resource type="Script" path="res://scripts/barrel.gd" id="1_atqb2"]
 [ext_resource type="Texture2D" uid="uid://c55ts6xy5rey3" path="res://assets/explosive_barrel_1.png" id="2_ufiho"]
