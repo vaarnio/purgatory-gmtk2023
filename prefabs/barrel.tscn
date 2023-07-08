@@ -7,11 +7,11 @@
 radius = 21.0
 height = 60.0
 
-[node name="barrel" type="CharacterBody2D"]
+[node name="barrel" type="CharacterBody2D" groups=["barrel"]]
 script = ExtResource("1_atqb2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="barrelTexture" type="Sprite2D" parent="."]
 texture = ExtResource("2_ufiho")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="barrelCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ce503")
