@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const obj_bullet = preload("res://scenes/bullet.tscn")
+
 var directionIsRight : bool = false
 @export var target_left = Vector2(0, 200)
 @export var target_right = Vector2(600, 200)
@@ -21,6 +23,15 @@ func _physics_process(delta):
 	if position.distance_to(target) > 5:
 		move_and_slide()
 
+func shoot():
+	var v1 = PlayerVariables.position
+	var v2 = position
+	# original position for ammo
+	v2 += Vector2(0, 0)
+	var new_bullet = obj_bullet.instantiate()
+	new_bullet.setup(300, v1, v2, "NormalBullet")
+	get_parent().add_child.call_deferred(new_bullet)
+
 func roam():
 	print("mingling")
 	timer.connect("timeout", change_direction)
@@ -31,6 +42,7 @@ func stop_roam():
 	timer.stop()
 	
 func change_direction():
+	shoot()
 	print("chaning direction")
 	if self.directionIsRight:
 		set_target(self.target_left)
