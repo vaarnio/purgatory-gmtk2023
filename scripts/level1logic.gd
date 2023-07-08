@@ -13,6 +13,7 @@ func _spawn_blEnemy(spawnLoc: Vector2):
 	var blEnemy = blEnemySc.instantiate()
 	blEnemy._moveTo(spawnLoc)
 	add_child(blEnemy)
+	blEnemy.roam()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

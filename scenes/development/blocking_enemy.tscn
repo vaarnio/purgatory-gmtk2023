@@ -19,3 +19,5 @@ shape = SubResource("RectangleShape2D_dhs4u")
 [node name="tummy" type="CollisionShape2D" parent="."]
 position = Vector2(4, 12)
 shape = SubResource("RectangleShape2D_dhs4u")
+
+[node name="Timer" type="Timer" parent="."]
