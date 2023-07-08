@@ -10,3 +10,5 @@ script = ExtResource("1_ibxak")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.490234, 0.443359)
 texture = ExtResource("2_ieark")
+
+[node name="Timer" type="Timer" parent="."]
