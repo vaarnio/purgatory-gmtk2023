@@ -2,7 +2,7 @@ extends Node
 
 var max_health = 100
 var health = 100
-
+var position
 @onready
 var gc = get_node("/root/GameController")
 
