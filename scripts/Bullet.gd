@@ -42,20 +42,6 @@ func _on_body_entered(body):
 		PlayerVariables.heal_damage(5)
 		print("Bullet hit player")
 	if body.is_in_group("barrel"):
-		barrelArr = []
-		barrelsLocated = 0
-		min_distance = 10000
-		var currentBestBarrel : CharacterBody2D
-		for _i in get_parent().get_children():
-			if ((_i.get_class() == "CharacterBody2D") and (snapped(_i.floor_max_angle,0.000001) == 0.785399)):
-				barrelArr.append(_i)
-				barrelsLocated += 1
-		for _i in barrelArr:
-			if(global_position.distance_to(_i.global_position) < min_distance):
-				min_distance = global_position.distance_to(_i.global_position)
-				currentBestBarrel = _i
-			#print(global_position)
-			#print(_i.global_position)
-		
-		currentBestBarrel._despawn()
-		
+		body._despawn()
+	if body.is_in_group("frenemy") and self.type == "AttackBullet":
+		body.hit()
