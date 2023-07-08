@@ -23,6 +23,7 @@ func setup(speed, direction, pos, set_type):
 func _ready():
 	global_position = start_pos
 	velocity = position.direction_to(move_dir) * move_speed
+	#print(velocity)
 	#pass # Replace with function body.
 
 
