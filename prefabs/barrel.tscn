@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://xxs53i2bvksr"]
+
+[ext_resource type="Script" path="res://scripts/barrel.gd" id="1_atqb2"]
+[ext_resource type="Texture2D" uid="uid://c55ts6xy5rey3" path="res://assets/explosive_barrel_1.png" id="2_ufiho"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ce503"]
+radius = 21.0
+height = 60.0
+
+[node name="barrel" type="CharacterBody2D" groups=["barrel"]]
+script = ExtResource("1_atqb2")
+
+[node name="barrelTexture" type="Sprite2D" parent="."]
+texture = ExtResource("2_ufiho")
+
+[node name="barrelCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ce503")
