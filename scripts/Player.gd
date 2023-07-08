@@ -41,7 +41,7 @@ func shootFromPlayer():
 		var new_bullet = obj_bullet.instantiate()
 		new_bullet.setup(-5, v1, v2)
 		new_bullet.changeType("AttackBullet")
-		get_parent().add_child(new_bullet)
+		get_parent().add_child.call_deferred(new_bullet)
 	else:
 		await get_tree().create_timer(0.5).timeout
 		attacked = false
