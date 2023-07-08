@@ -1,15 +1,16 @@
 extends Node2D
 
-const blenemySc = preload("res://scenes/development/blocking_enemy.tscn")
+const blenemySc = preload("res://prefabs/blocking_enemy.tscn")
+const barrelSc = preload("res://prefabs/barrel.tscn")
 const frenemySc = preload("res://prefabs/frenemy.tscn")
-
-var rng = RandomNumberGenerator.new()
-@onready var spawn_extents = $spawn_area/CollisionShape2D.shape.extents
 
 # how many enemies of each type to spawn per wave
 var wave_frenemies = 5
 var wave_blenemies = 1
 # var wave_barrels = 2
+
+var rng = RandomNumberGenerator.new()
+@onready var spawn_extents = $spawn_area/CollisionShape2D.shape.extents
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,8 @@ func _ready():
 	rng.randomize()
 	_spawn_wave()
 	print(spawn_extents)
+	_spawn_blenemy(Vector2(320,320))
+	_spawn_barrel(Vector2(640,500))
 	pass # Replace with function body.
 
 func _spawn_wave():
@@ -48,6 +51,11 @@ func _spawn_frenemy(spawnLoc: Vector2):
 	frenemy._moveTo(spawnLoc)
 	add_child(frenemy)
 	frenemy.roam()
+
+func _spawn_barrel(spawnLoc: Vector2): 
+	var barrel = barrelSc.instantiate()
+	barrel._moveTo(spawnLoc)
+	add_child(barrel)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
