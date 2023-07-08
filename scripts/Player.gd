@@ -27,7 +27,7 @@ func shoot():
 	#var rNum2 = rng.rand_range(0,1000)
 	#new_bullet.position = Vector2(rNum, rNum2)
 	#new_bullet.velocity = Vector2(speed, 0).r
-	get_parent().add_child(new_bullet)
+	get_parent().add_child.call_deferred(new_bullet)
 
 func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
