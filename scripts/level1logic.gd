@@ -6,8 +6,9 @@ const barrelSc = preload("res://prefabs/barrel.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#const exampleLocation = Vector2(320,320)
-	_spawn_blEnemy(Vector2(320,320))
-	_spawn_barrel(Vector2(640,500))
+	#_spawn_blEnemy(Vector2(320,320))
+	_spawn_barrel(Vector2(220,200))
+	_spawn_barrel(Vector2(420,400))
 	pass # Replace with function body.
 
 
