@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhf0bvsuc3ri6"]
+
+[ext_resource type="Script" path="res://scripts/level1logic.gd" id="1_r24lx"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2_qnblj"]
+[ext_resource type="Texture2D" uid="uid://j26xtxjwf5tb" path="res://assets/image.png" id="3_5bi0c"]
+[ext_resource type="Script" path="res://scripts/Healthbar.gd" id="4_0v07v"]
+[ext_resource type="Texture2D" uid="uid://bco2fr2brjr6h" path="res://assets/barHorizontal_green.png" id="5_42hdr"]
+[ext_resource type="Script" path="res://scripts/Bullet.gd" id="6_36atn"]
+[ext_resource type="Texture2D" uid="uid://dig6m74oxr3vx" path="res://assets/bullet.png" id="7_8wduw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
+size = Vector2(108, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dutia"]
+size = Vector2(44, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfwhr"]
+size = Vector2(1152, 200)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r24lx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 385.0
+offset_top = 218.0
+offset_right = 708.0
+offset_bottom = 367.0
+text = "Gaming"
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
+position = Vector2(596, 371)
+script = ExtResource("2_qnblj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_5bi0c")
+
+[node name="Timer" type="Timer" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_pafeb")
+
+[node name="HealthDisplay" type="Node2D" parent="."]
+position = Vector2(12, 11)
+script = ExtResource("4_0v07v")
+
+[node name="HealthBar" type="TextureProgressBar" parent="HealthDisplay"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("5_42hdr")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(200, 300)
+script = ExtResource("6_36atn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("7_8wduw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_dutia")
+
+[node name="spawn_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_area"]
+position = Vector2(576, 101)
+shape = SubResource("RectangleShape2D_mfwhr")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

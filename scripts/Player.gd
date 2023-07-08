@@ -34,6 +34,7 @@ func shootFromPlayer():
 		v2 += Vector2(0, -80)
 		var new_bullet = obj_bullet.instantiate()
 		new_bullet.setup(300, v1, v2, "AttackBullet")
+		new_bullet.rotation_degrees = 180
 		get_parent().add_child.call_deferred(new_bullet)
 	else:
 		#await get_tree().create_timer(0.5).timeout

@@ -7,7 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _pressed():
-	SceneController.goto_scene("res://scenes/levelpatrik.tscn")
+	SceneController.goto_scene("res://scenes/Level1_Patrik.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
