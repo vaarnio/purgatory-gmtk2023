@@ -5,10 +5,11 @@ const barrelSc = preload("res://prefabs/barrel.tscn")
 const frenemySc = preload("res://prefabs/frenemy.tscn")
 
 # how many enemies of each type to spawn per wave
-var wave_frenemies = 5
-var wave_blenemies = 1
+var wave_frenemies = 3
+var wave_blenemies = 3
 var wave_barrels = 2
 
+var timer := Timer.new()
 var rng = RandomNumberGenerator.new()
 @onready var spawn_extents_frenemy = $spawn_frenemy/CollisionShape2D.shape.extents
 @onready var spawn_extents_blenemy = $spawn_blenemy/CollisionShape2D.shape.extents
@@ -16,9 +17,18 @@ var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#const exampleLocation = Vector2(320,320)
+	add_child(timer)
+	timer.connect("timeout", _on_timeout)
+	timer.wait_time = 5
+	timer.one_shot = false
+	timer.start()
 	rng.randomize()
 	_spawn_wave()
 	pass # Replace with function body.
+
+func _on_timeout():
+	print()
+	_spawn_wave()
 
 func _spawn_wave():
 	print("spawning a new wave of enemies")
