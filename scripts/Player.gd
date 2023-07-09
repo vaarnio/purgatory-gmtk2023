@@ -38,6 +38,7 @@ func shootFromPlayer():
 		new_bullet.setup(300, v1, v2, "AttackBullet")
 		new_bullet.rotation_degrees = 180
 		get_parent().add_child.call_deferred(new_bullet)
+		$Shooting.play()
 	else:
 		#await get_tree().create_timer(0.5).timeout
 		attacked = false
