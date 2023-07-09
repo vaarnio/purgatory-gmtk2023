@@ -27,7 +27,7 @@ func hit():
 	self.get_parent().remove_child(self)
 
 func shoot():
-	var v1 = PlayerVariables.position
+	var v1 = Vector2(position.x, 1000)
 	var v2 = position
 	# original position for ammo
 	v2 += Vector2(0, 0)
