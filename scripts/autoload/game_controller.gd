@@ -2,6 +2,8 @@ extends Node
 
 var score = 0
 var enemies_alive = 0
+var dmg_multiplier = 1.01
+var dmg_per_tick = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
