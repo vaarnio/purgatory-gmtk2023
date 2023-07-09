@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd3vwo5nmsyqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfwhr"]
+size = Vector2(702, 200)
+
+[node name="spawn_frenemy" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(351, 101)
+shape = SubResource("RectangleShape2D_mfwhr")

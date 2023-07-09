@@ -1,29 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b24qda5m77hhx"]
+[gd_scene load_steps=6 format=3 uid="uid://b24qda5m77hhx"]
 
 [ext_resource type="Script" path="res://scripts/level1logic.gd" id="1_bxjtq"]
 [ext_resource type="PackedScene" uid="uid://d4kuaf4j3bw6j" path="res://prefabs/player.tscn" id="2_s0apy"]
+[ext_resource type="PackedScene" uid="uid://dd3vwo5nmsyqi" path="res://prefabs/spawn_frenemy.tscn" id="3_mgxky"]
+[ext_resource type="PackedScene" uid="uid://brq8wxd824yvg" path="res://prefabs/spawn_blenemy.tscn" id="4_7m0ox"]
 [ext_resource type="PackedScene" uid="uid://ch71loucpaifd" path="res://prefabs/hud.tscn" id="6_0fp13"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfwhr"]
-size = Vector2(702, 200)
-
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_bxjtq")
 
 [node name="Player" parent="." instance=ExtResource("2_s0apy")]
 position = Vector2(358, 686)
 
-[node name="spawn_frenemy" type="Area2D" parent="."]
+[node name="spawn_frenemy" parent="." instance=ExtResource("3_mgxky")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_frenemy"]
-position = Vector2(351, 101)
-shape = SubResource("RectangleShape2D_mfwhr")
-
-[node name="spawn_blenemy" type="Area2D" parent="."]
-position = Vector2(-1, 200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_blenemy"]
-position = Vector2(352, 100)
-shape = SubResource("RectangleShape2D_mfwhr")
+[node name="spawn_blenemy" parent="." instance=ExtResource("4_7m0ox")]
 
 [node name="hud" parent="." instance=ExtResource("6_0fp13")]
