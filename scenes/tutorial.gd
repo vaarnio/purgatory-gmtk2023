@@ -1,9 +1,7 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$Score.text = str(GameController.score)
 	$MenuButton.connect("button_down", return_to_menu)
 	pass # Replace with function body.
 

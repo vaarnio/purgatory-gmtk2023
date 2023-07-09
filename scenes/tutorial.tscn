@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://b10nwoq6woxkp"]
+
+[ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_am44x"]
+
+[node name="tutorial" type="Node2D"]
+script = ExtResource("1_am44x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 136.0
+offset_top = 282.0
+offset_right = 568.0
+offset_bottom = 702.0
+text = "In purgatory a constant health drain tries to kill the player. Objective is to live as long as possible and beat a personal highscore.
+
+You control your character with your mouse and shoot with space. 
+
+Collecting fireballs heals you and also counts towards your final score. Some enemies block fireballs, so try to shoot them down as fast as possible.
+
+Game ends when your health reaches zero"
+
+[node name="MenuButton" type="Button" parent="."]
+offset_left = 270.0
+offset_top = 582.0
+offset_right = 410.0
+offset_bottom = 631.0
+text = "Back to menu"
