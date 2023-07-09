@@ -1,52 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://c84rrwywbrs2m"]
+[gd_scene load_steps=3 format=3 uid="uid://c84rrwywbrs2m"]
 
 [ext_resource type="Script" path="res://scenes/gameover.gd" id="1_xbe3j"]
+[ext_resource type="Texture2D" uid="uid://dsynkogbi10x2" path="res://assets/gamebackground.png" id="2_uilfg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xbe3j")
 
 [node name="GameOver" type="RichTextLabel" parent="."]
 offset_left = 299.0
-offset_top = 257.0
+offset_top = 103.0
 offset_right = 395.0
 offset_bottom = 990.0
-text = "Game Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over
-Over"
+text = "Game Over!"
 
 [node name="Score" type="RichTextLabel" parent="."]
-offset_left = 44.0
-offset_top = 186.0
+offset_left = 351.0
+offset_top = 158.0
 offset_right = 650.0
-offset_bottom = 226.0
+offset_bottom = 201.0
 
 [node name="ScoreTitle" type="RichTextLabel" parent="."]
-offset_left = 310.0
+offset_left = 299.0
 offset_top = 158.0
 offset_right = 464.0
 offset_bottom = 198.0
@@ -58,3 +32,8 @@ offset_top = 340.0
 offset_right = 410.0
 offset_bottom = 389.0
 text = "Back to menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -8
+position = Vector2(469, 446)
+texture = ExtResource("2_uilfg")
