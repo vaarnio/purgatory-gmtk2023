@@ -52,5 +52,5 @@ func _on_body_entered(body):
 		body.hit()
 	if body.is_in_group("blocking_enemy"):
 		_killSelf()
-	if self.type == "AttackBullet":
-		body.hit()
+		if self.type == "AttackBullet":
+			body.hit()
