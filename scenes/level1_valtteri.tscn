@@ -11,11 +11,19 @@ size = Vector2(702, 200)
 script = ExtResource("1_bxjtq")
 
 [node name="Player" parent="." instance=ExtResource("2_s0apy")]
+position = Vector2(358, 686)
 
-[node name="spawn_area" type="Area2D" parent="."]
+[node name="spawn_frenemy" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_frenemy"]
 position = Vector2(351, 101)
+shape = SubResource("RectangleShape2D_mfwhr")
+
+[node name="spawn_blenemy" type="Area2D" parent="."]
+position = Vector2(-1, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn_blenemy"]
+position = Vector2(352, 100)
 shape = SubResource("RectangleShape2D_mfwhr")
 
 [node name="hud" parent="." instance=ExtResource("6_0fp13")]

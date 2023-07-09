@@ -25,6 +25,7 @@ func _moveTo(location: Vector2):
 
 func _despawn():
 	#print("Despacito") # Debug print
+	GameController.enemies_alive -= 1
 	get_parent().remove_child(self)
 	#TODO: exploding despawn 
 
@@ -36,7 +37,6 @@ func _explode():
 		Vector2(global_position.x,ProjectSettings.get_setting("display/window/size/viewport_width")+100)
 	]
 	for d in directions:
-		print(d)
 		bInst = bObj.instantiate()
 		bInst.setup(300, d, global_position, "NormalBullet")
 		get_parent().add_child.call_deferred(bInst)

@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
-var directionIsRight : bool = false
-@export var target_left = Vector2(0, 200)
-@export var target_right = Vector2(600, 200)
-
 @onready var timer = $Timer
 var rng = RandomNumberGenerator.new()
+
+var directionIsRight : bool = false
+@export var moving_height = 350 # should be lower than frenemies to block bullets
+@export var target_left = Vector2(0, moving_height)
+@export var target_right = Vector2(600, moving_height)
+
+
 
 @export var speed: int = 100
 @export var target: Vector2 = self.target_left
@@ -13,7 +16,6 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	timer.wait_time = rng.randi_range(1,3)
-	print("Here I am")
 
 func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
@@ -22,10 +24,10 @@ func _physics_process(delta):
 		move_and_slide()
 
 func hit():
+	GameController.enemies_alive -= 1
 	self.get_parent().remove_child(self)
 
 func roam():
-	print("mingling")
 	timer.connect("timeout", change_direction)
 	timer.one_shot = false
 	timer.start()
@@ -34,7 +36,6 @@ func stop_roam():
 	timer.stop()
 	
 func change_direction():
-	print("chaning direction")
 	if self.directionIsRight:
 		set_target(self.target_left)
 		self.directionIsRight = false

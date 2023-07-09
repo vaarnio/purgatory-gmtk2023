@@ -15,7 +15,6 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	timer.wait_time = rng.randi_range(0.5,3)
-	print("Here I am")
 
 func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
@@ -24,6 +23,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func hit():
+	GameController.enemies_alive -= 1
 	self.get_parent().remove_child(self)
 
 func shoot():
@@ -36,7 +36,6 @@ func shoot():
 	get_parent().add_child.call_deferred(new_bullet)
 
 func roam():
-	print("mingling")
 	timer.connect("timeout", change_direction)
 	timer.one_shot = false
 	timer.start()
@@ -46,7 +45,6 @@ func stop_roam():
 	
 func change_direction():
 	shoot()
-	print("chaning direction")
 	if self.directionIsRight:
 		set_target(self.target_left)
 		self.directionIsRight = false
