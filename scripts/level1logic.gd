@@ -18,7 +18,7 @@ func _ready():
 	rng.randomize()
 	_spawn_wave()
 	print(spawn_extents)
-	_spawn_blenemy(Vector2(320,320))
+	_spawn_blenemy(Vector2(500,320))
 	_spawn_barrel(Vector2(640,500))
 	pass # Replace with function body.
 
