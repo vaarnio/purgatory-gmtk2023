@@ -22,7 +22,7 @@ offset_left = 230.0
 offset_top = 290.0
 offset_right = 477.0
 offset_bottom = 363.0
-text = "Tutorial"
+text = "How to play"
 script = ExtResource("3_4cnip")
 
 [node name="Button_credits" type="Button" parent="."]

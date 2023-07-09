@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b10nwoq6woxkp"]
+[gd_scene load_steps=3 format=3 uid="uid://b10nwoq6woxkp"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_am44x"]
+[ext_resource type="Texture2D" uid="uid://1wexf36ohclu" path="res://assets/tutorial.png" id="2_3awpb"]
 
 [node name="tutorial" type="Node2D"]
 script = ExtResource("1_am44x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 136.0
 offset_top = 282.0
 offset_right = 568.0
@@ -14,13 +16,19 @@ text = "In purgatory a constant health drain tries to kill the player. Objective
 
 You control your character with your mouse and shoot with space. 
 
-Collecting fireballs heals you and also counts towards your final score. Some enemies block fireballs, so try to shoot them down as fast as possible.
+Collecting fireballs heals you and also counts towards your final score. Some enemies block fireballs, so try to shoot them down as fast as possible. But also try to keep shooting enemies alive.
 
 Game ends when your health reaches zero"
 
 [node name="MenuButton" type="Button" parent="."]
-offset_left = 270.0
-offset_top = 582.0
-offset_right = 410.0
-offset_bottom = 631.0
+offset_left = 269.0
+offset_top = 815.0
+offset_right = 409.0
+offset_bottom = 864.0
 text = "Back to menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(351, 452)
+scale = Vector2(1.01429, 1.00889)
+texture = ExtResource("2_3awpb")
