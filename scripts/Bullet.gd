@@ -47,5 +47,8 @@ func _on_body_entered(body):
 		body._despawn()
 	if body.is_in_group("frenemy") and self.type == "AttackBullet":
 		body.hit()
-	if body.is_in_group("blocking_enemy") and self.type == "AttackBullet":
-		body.hit()
+	if body.is_in_group("blocking_enemy"):
+		if self.type == "AttackBullet":
+			body.hit()
+		else:
+			get_parent().get_node(self.get_path()).queue_free()
