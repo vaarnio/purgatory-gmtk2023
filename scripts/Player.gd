@@ -9,12 +9,16 @@ var timer = $Timer
 const obj_bullet = preload("res://scenes/bullet.tscn")
 var rng = RandomNumberGenerator.new()
 var attacked = false
+var dmg_multiplier
+var dmg_counter
 
 func _ready():
 	PlayerVariables.position = position
 	timer.connect("timeout", on_Timer_timeout)
 	timer.set_one_shot(false)
 	timer.start()
+	self.dmg_multiplier = GameController.dmg_multiplier
+	dmg_counter = 40
 
 func _input(event):
 	target = get_global_mouse_position()
@@ -46,5 +50,7 @@ func _physics_process(delta):
 	PlayerVariables.position = position
 
 func on_Timer_timeout():
-	PlayerVariables.take_damage(5)
-
+	var dmg = (log(dmg_counter) / log(10)) -1.5
+	print(dmg)
+	PlayerVariables.take_damage(dmg)
+	dmg_counter += 1
