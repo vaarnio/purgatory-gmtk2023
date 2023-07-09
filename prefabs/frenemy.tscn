@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5m44qhpa8n54"]
 
 [ext_resource type="Script" path="res://scripts/Frenemy.gd" id="1_ibxak"]
-[ext_resource type="Texture2D" uid="uid://dtb8p3j42wqtc" path="res://assets/icon.svg" id="2_ieark"]
+[ext_resource type="Texture2D" uid="uid://bjh83h2phcvn7" path="res://assets/frenemy.png" id="2_fbxwb"]
 [ext_resource type="Script" path="res://scripts/frenemyDetector.gd" id="3_gt7u6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_twx78"]
@@ -12,8 +12,8 @@ position = Vector2(609, 129)
 script = ExtResource("1_ibxak")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.490234, 0.443359)
-texture = ExtResource("2_ieark")
+scale = Vector2(0.22, 0.199)
+texture = ExtResource("2_fbxwb")
 
 [node name="Timer" type="Timer" parent="."]
 

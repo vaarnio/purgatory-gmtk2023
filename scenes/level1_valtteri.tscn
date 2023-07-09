@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://prefabs/spawn_frenemy.tscn" id="3_mgxky"]
 [ext_resource type="PackedScene" uid="uid://brq8wxd824yvg" path="res://prefabs/spawn_blenemy.tscn" id="4_7m0ox"]
 [ext_resource type="PackedScene" uid="uid://ch71loucpaifd" path="res://prefabs/hud.tscn" id="6_0fp13"]
-[ext_resource type="Texture2D" uid="uid://dsynkogbi10x2" path="res://assets/gamebackground.png" id="6_4thv6"]
+[ext_resource type="Texture2D" path="res://assets/gamebackground.png" id="6_4thv6"]
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_bxjtq")

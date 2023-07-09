@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4kuaf4j3bw6j"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_se0u5"]
+
 [ext_resource type="Texture2D" uid="uid://vm1eenl0hcvj" path="res://assets/player.png" id="2_okhls"]
 [ext_resource type="AudioStream" uid="uid://xatjdudyuna6" path="res://assets/257234__javierzumer__fire-shot.wav" id="3_g1pch"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
 size = Vector2(94, 140)
