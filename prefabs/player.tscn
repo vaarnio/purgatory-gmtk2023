@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4kuaf4j3bw6j"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_se0u5"]
-[ext_resource type="Texture2D" uid="uid://j26xtxjwf5tb" path="res://assets/image.png" id="2_i8ai1"]
+[ext_resource type="Texture2D" uid="uid://vm1eenl0hcvj" path="res://assets/player.png" id="2_okhls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pafeb"]
-size = Vector2(108, 158)
+size = Vector2(94, 140)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(596, 371)
@@ -13,10 +13,13 @@ collision_mask = 2
 script = ExtResource("1_se0u5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_i8ai1")
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_okhls")
+flip_v = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_pafeb")
