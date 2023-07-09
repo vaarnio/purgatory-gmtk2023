@@ -52,6 +52,5 @@ func _physics_process(delta):
 
 func on_Timer_timeout():
 	var dmg = (log(dmg_counter) / log(10)) -1.5
-	print(dmg)
 	PlayerVariables.take_damage(dmg)
 	dmg_counter += 1
