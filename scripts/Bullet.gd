@@ -35,16 +35,22 @@ func _ready():
 func _process(delta):
 	global_position += velocity * delta
 
+func _killSelf():
+	get_parent().get_node(self.get_path()).queue_free()
 
 func _on_body_entered(body):
 	if body.is_in_group("Player")and self.type == "NormalBullet":
-		get_parent().get_node(self.get_path()).queue_free()
+		_killSelf()
 		PlayerVariables.heal_damage(5)
 		GameController.add_score(10)
-		print("Bullet hit player")
 	if body.is_in_group("barrel"):
+		_killSelf()
+		body._explode()
 		body._despawn()
 	if body.is_in_group("frenemy") and self.type == "AttackBullet":
+		_killSelf()
 		body.hit()
-	if body.is_in_group("blocking_enemy") and self.type == "AttackBullet":
+	if body.is_in_group("blocking_enemy"):
+		_killSelf()
+	if self.type == "AttackBullet":
 		body.hit()
