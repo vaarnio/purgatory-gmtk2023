@@ -43,6 +43,7 @@ func _on_body_entered(body):
 		GameController.add_score(10)
 		print("Bullet hit player")
 	if body.is_in_group("barrel"):
+		body._explode()
 		body._despawn()
 	if body.is_in_group("frenemy") and self.type == "AttackBullet":
 		body.hit()
