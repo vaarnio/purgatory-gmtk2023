@@ -7,11 +7,10 @@ var directionIsRight : bool = false
 @export var moving_height = 350 # should be lower than frenemies to block bullets
 @export var target_left = Vector2(0, moving_height)
 @export var target_right = Vector2(600, moving_height)
-
-
-
 @export var speed: int = 100
 @export var target: Vector2 = self.target_left
+
+var hitsleft = 3
 
 func _ready():
 	rng.randomize()
@@ -24,6 +23,11 @@ func _physics_process(delta):
 		move_and_slide()
 
 func hit():
+	hitsleft -= 1
+	if hitsleft <= 0:
+		_death()
+
+func _death():
 	GameController.enemies_alive -= 1
 	self.get_parent().remove_child(self)
 
