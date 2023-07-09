@@ -13,11 +13,9 @@ func _process(delta):
 	pass
 
 func goto_gameover_scene():
-	print("goto gameover")
 	goto_scene("res://scenes/gameover.tscn")
 	
 func goto_menu_scene():
-	print("goto menu")
 	goto_scene("res://scenes/menu.tscn")
 
 func goto_scene(path):

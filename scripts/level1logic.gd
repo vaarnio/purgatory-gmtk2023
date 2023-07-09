@@ -27,11 +27,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_timeout():
-	print()
 	_spawn_wave()
 
 func _spawn_wave():
-	print("spawning a new wave of enemies")
 	#spawn frenemies
 	for i in range(0, wave_frenemies, 1):
 		GameController.enemies_alive += 1
