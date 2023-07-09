@@ -1,8 +1,7 @@
 extends Node
 
-@onready
-var sc = get_node("/root/SceneController")
 var score = 0
+var enemies_alive = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
