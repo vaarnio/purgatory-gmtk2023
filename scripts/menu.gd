@@ -7,8 +7,10 @@ func _ready():
 	var new_fire = obj_fire.instantiate()
 	add_child.call_deferred(new_fire)
 	new_fire.global_position = Vector2(200, 800)
+	new_fire.z_index = -2
 	new_fire.get_node("CPUParticles2D").scale_amount_min = 12
 	new_fire.get_node("CPUParticles2D").scale_amount_max = 15
+	new_fire.modulate = Color(1, 1, 1, 0.15)
 	pass # Replace with function body.
 
 

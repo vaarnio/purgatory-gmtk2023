@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level1logic.gd" id="1_bxjtq"]
 [ext_resource type="PackedScene" uid="uid://d4kuaf4j3bw6j" path="res://prefabs/player.tscn" id="2_s0apy"]
-[ext_resource type="PackedScene" uid="uid://dd3vwo5nmsyqi" path="res://prefabs/spawn_frenemy.tscn" id="3_mgxky"]
+[ext_resource type="PackedScene" path="res://prefabs/spawn_frenemy.tscn" id="3_mgxky"]
 [ext_resource type="PackedScene" uid="uid://brq8wxd824yvg" path="res://prefabs/spawn_blenemy.tscn" id="4_7m0ox"]
 [ext_resource type="PackedScene" uid="uid://ch71loucpaifd" path="res://prefabs/hud.tscn" id="6_0fp13"]
 [ext_resource type="Texture2D" path="res://assets/gamebackground.png" id="6_4thv6"]
